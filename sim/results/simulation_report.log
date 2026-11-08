@@ -1,0 +1,23 @@
+================================================================================
+H-MPPI HARDWARE ACCELERATOR — RTL VERIFICATION & TIMING BENCHMARK
+Generated: \2026-11-08 09:34:11 UTC\
+Architecture: 4-D Sobol QMC + 16 Parallel Rollout Lanes (H=16, M=256)
+Target: ASAP7 7nm FinFET Standard-Cell Library (500 MHz Sign-off)
+================================================================================
+
+=================================================================
+  Starting H-MPPI Full-Scale Core Simulation (Verification)
+=================================================================
+[TEST 1] Triggering Baseline Trajectory Frame (M=256 rollouts, H=16)...
+[TEST 1 SUCCESS] Frame finished in 1220 cycles (24510000 ns).
+  Min Rollout Cost: 117558
+  Optimal Accel u*: (0.184, -0.078, -0.570) m/s^2
+
+[TEST 2] Triggering OOSM-Throttled Frame with cov_scale_in = 1...
+[TEST 2 SUCCESS] Slosh-Damped Frame finished in 1220 cycles.
+  Damped Min Rollout Cost: 117558
+  Damped Accel u*: (0.188, -0.062, -0.562) m/s^2
+
+=================================================================
+  All H-MPPI Verifications Passed Cleanly (0 Errors)
+=================================================================

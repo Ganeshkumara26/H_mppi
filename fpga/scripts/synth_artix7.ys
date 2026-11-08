@@ -1,0 +1,27 @@
+# ==============================================================================
+# Yosys Synthesis Script: H-MPPI Accelerator Core for Xilinx Artix-7
+# Target Family: Series-7 (xc7a35t / xc7a200t)
+# Top Module   : hmppi_core_top
+# ==============================================================================
+
+# Read SystemVerilog RTL Sources (Relative to fpga/ directory)
+read_verilog -sv ../rtl/chebyshev_slosh_eval.sv
+read_verilog -sv ../rtl/fexp2_unit.sv
+read_verilog -sv ../rtl/sobol_qmc_4d.sv
+read_verilog -sv ../rtl/mppi_rollout_lane.sv
+read_verilog -sv ../rtl/hmppi_core_top.sv
+
+# Check design hierarchy
+hierarchy -check -top hmppi_core_top
+
+# Synthesis targeting Xilinx 7-Series FPGA
+# -family xc7: Target Artix-7, Kintex-7, Virtex-7
+# -top hmppi_core_top: Top level module
+synth_xilinx -family xc7 -top hmppi_core_top
+
+# Detailed cell count and resource utilization summary
+stat
+
+# Export structural Series-7 primitive netlist
+write_verilog -attr2comment netlist/hmppi_core_top_series7_netlist.v
+write_json netlist/hmppi_core_top.json

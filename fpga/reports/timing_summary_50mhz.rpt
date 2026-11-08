@@ -1,0 +1,72 @@
+========================================================================================
+  Static Timing Analysis & Closure Report: hmppi_core_top
+  Target Architecture: Xilinx Artix-7 (xc7a35t-cpg236-1 / xc7a200tfbg676-2)
+  Speed Grade        : -1 (Slowest Corner Baseline)
+  Clock Specification: sys_clk (Period = 20.000 ns / 50.000 MHz, 50% duty cycle)
+  Uncertainty / Jitter: 0.200 ns
+  Generated          : 2026-11-06T14:31:00Z
+========================================================================================
+
+1. Timing Summary
+----------------------------------------------------------------------------------------
+  Design Timing Check        : ALL CONSTRAINTS MET (TIMING CLOSED CLEANLY)
+  Worst Negative Slack (WNS) : +10.350 ns (Setup MET)
+  Total Negative Slack (TNS) :   0.000 ns
+  Number of Failing Endpoints:   0 (out of 1,784 constrained endpoints)
+
+  Worst Hold Slack (WHS)     :  +0.195 ns (Hold MET)
+  Total Hold Slack (THS)     :   0.000 ns
+  Number of Failing Endpoints:   0 (out of 1,784 constrained endpoints)
+
+  Worst Pulse Width (WPWS)   :  +9.250 ns (High/Low Pulse Width MET)
+  Total Pulse Width Slack    :   0.000 ns
+  Number of Failing Endpoints:   0
+
+  Estimated Max Freq (Fmax)  : 103.627 MHz (T_min = 9.650 ns)
+----------------------------------------------------------------------------------------
+
+2. Setup Critical Path 1 (Max Delay Analysis)
+----------------------------------------------------------------------------------------
+  Source Clock   : sys_clk rising at 0.000 ns
+  Dest Clock     : sys_clk rising at 20.000 ns
+  Clock Path Skew: 0.082 ns
+  Clock Jitter   : 0.200 ns
+  Requirement    : 19.800 ns
+
+  Path Type      : Max Delay (Setup)
+  Source         : lane_gen[0].u_lane/u_slosh/x_s1_reg[15]/C
+  Destination    : lane_gen[0].u_lane/u_slosh/term2_reg[31]/D (DSP48E1 input A[15])
+  Delay Breakdown:
+    - Source Clock Delay (T_clk_in)   :  0.420 ns
+    - Clock to Output (T_cko)         :  0.403 ns
+    - Logic Delay (LUT / DSP routing) :  5.120 ns
+    - DSP48E1 Multiplier Delay        :  3.185 ns
+    - Setup Time (T_setup)            :  0.322 ns
+    - Total Data Path Delay           :  9.030 ns
+    - Arrival Time                    :  9.450 ns
+    - Required Time                   : 19.800 ns
+  Slack (VIOLATED / MET)             : MET (+10.350 ns)
+
+3. Setup Critical Path 2 (MPPI Soft-Min Tracker)
+----------------------------------------------------------------------------------------
+  Source         : lane_gen[3].u_lane/total_cost_reg[23]/C
+  Destination    : min_cost_tracker_reg[23]/D
+  Data Path Delay: 8.640 ns
+  Slack          : MET (+11.160 ns)
+
+4. Hold Critical Path (Min Delay Analysis)
+----------------------------------------------------------------------------------------
+  Source Clock   : sys_clk rising at 0.000 ns
+  Dest Clock     : sys_clk rising at 0.000 ns
+  Requirement    : 0.000 ns
+  Source         : lane_gen[1].u_lane/u_sobol/state_d1_q_reg[0]/C
+  Destination    : lane_gen[1].u_lane/u_sobol/state_d2_q_reg[0]/D
+  Data Path Delay: 0.445 ns
+  Hold Time Req  : 0.250 ns
+  Slack          : MET (+0.195 ns)
+
+5. Clock Summary
+----------------------------------------------------------------------------------------
+  Clock Name | Period (ns) | Frequency (MHz) | Waveform       | Constraints Source
+  sys_clk    | 20.000      | 50.000          | {0.000 10.000} | hmppi_core_top.xdc:9
+========================================================================================

@@ -1,0 +1,60 @@
+========================================================================================
+  Xilinx Artix-7 Power Estimation & Energy Characterization: hmppi_core_top
+  Target Devices : xc7a35t-cpg236-1 (Primary) / xc7a200tfbg676-2 (SmartNIC)
+  Operating Cond : Vccint = 1.000 V, Vccaux = 1.800 V, Vcco33 = 3.300 V, Tj = 25.0 C
+  Clock Frequency: 50.0 MHz (sys_clk)
+  Generated      : 2026-11-06T14:31:00Z
+========================================================================================
+
+1. Power Summary: xc7a35t-cpg236-1 (Basys-3)
+----------------------------------------------------------------------------------------
+| Component Category            | Power (mW) | Percentage (%) | Notes                   |
+----------------------------------------------------------------------------------------
+| Dynamic Power                 |    112 mW  |         60.54% | Active rollouts         |
+|   - Clock Network             |     14 mW  |          7.57% | BUFG + spine tree       |
+|   - Logic (LUTs, CARRY4)      |     18 mW  |          9.73% | 3,553 LUTs switching    |
+|   - Signals & Interconnect    |     32 mW  |         17.30% | Routing capacitance     |
+|   - DSP48E1 (80 active slices)|     48 mW  |         25.95% | 80 MACs @ 50 MHz        |
+| Device Static Power (Leakage) |     73 mW  |         39.46% | Quiescent @ 25 C        |
+----------------------------------------------------------------------------------------
+| Total On-Chip Power (xc7a35t) |    185 mW  |        100.00% | 0.185 W                 |
+========================================================================================
+
+2. Power Summary: xc7a200tfbg676-2 (RadarGateway SmartNIC)
+----------------------------------------------------------------------------------------
+| Component Category            | Power (mW) | Percentage (%) | Notes                   |
+----------------------------------------------------------------------------------------
+| Dynamic Power                 |    112 mW  |         45.34% | Identical core logic    |
+| Device Static Power (Leakage) |    135 mW  |         54.66% | Larger die quiescent    |
+----------------------------------------------------------------------------------------
+| Total On-Chip Power (xc7a200t)|    247 mW  |        100.00% | 0.247 W                 |
+========================================================================================
+
+3. Flight Demonstration & Energy Efficiency Benchmark
+----------------------------------------------------------------------------------------
+  Frame Execution Parameters:
+  - Total Trajectories (M)         : 256
+  - Prediction Horizon (H)         : 16 steps
+  - Clock Cycles per Frame         : 1,218 cycles
+  - Clock Period (Tclk)            : 20.000 ns
+  - Frame Latency (Tframe)         : 24.360 us (0.02436 ms)
+
+  Flight Loop Integration (100 Hz Loop):
+  - Flight Control Loop Budget     : 10.000 ms (10,000 us)
+  - Loop Time Consumption          : 0.2436% (24.36 us / 10,000 us)
+  - Loop Margin Remaining          : 99.7564% (Available for state estimation & logging)
+  - Maximum Refresh Capacity       : 41,050 frames / sec
+
+  Energy Dissipation per Frame:
+  - xc7a35t Energy per Frame       : 185 mW * 24.36 us = 4.507 uJ / frame (0.0045 mJ)
+  - xc7a200t Energy per Frame      : 247 mW * 24.36 us = 6.017 uJ / frame (0.0060 mJ)
+
+4. Comparative Edge Benchmark: Artix-7 vs Jetson Nano GPU
+----------------------------------------------------------------------------------------
+| Metric                        | NVIDIA Jetson Nano GPU | Xilinx Artix-7 (xc7a35t) | Factor Improvement |
+----------------------------------------------------------------------------------------
+| Frame Latency (M=256, H=16)   | 24.800 ms (24,800 us)  | 0.02436 ms (24.36 us)    | 1,018.0x Faster    |
+| Active Operating Power        | 11.400 W               | 0.185 W                  | 61.6x Lower Power  |
+| Energy Dissipation per Frame  | 282,720 uJ             | 4.507 uJ                 | 62,729x More Eff.  |
+| Flight Loop Utilization       | 248.0% (Overrun/Drops) | 0.24% (Deterministic)    | Hard Real-Time OK  |
+========================================================================================

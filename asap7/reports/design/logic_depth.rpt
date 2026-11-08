@@ -1,0 +1,9 @@
+Logic depth: 5
+
+Critical path drivers:
+  _120791_/Y
+  _120790_/Y
+  _083906_/Y
+  _061666_/Y
+  gen_lanes[3].u_lane/u_slosh/enable$_DFF_PN0_/QN
+  clk

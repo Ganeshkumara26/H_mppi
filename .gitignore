@@ -1,0 +1,19 @@
+# Gitignore for H-MPPI Accelerator
+*.md
+!README.md
+!docs/
+!docs/**
+
+*.vvp
+*.vcd
+*.log
+!sim/results/*.log
+*.pyc
+__pycache__/
+tb_hmppi_top
+
+run_*.py
+patch_*.py
+debug_*.py
+probe_*.py
+check_*.py

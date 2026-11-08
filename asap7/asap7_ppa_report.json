@@ -1,0 +1,136 @@
+{
+  "design": "hmppi_core_top",
+  "technology": "ASAP7 7nm FinFET (ASAP7SC7p5RVT / ASAP7SC7p5LVT / ASAP7SC7p5SLVT)",
+  "clock_target_mhz": 500.0,
+  "clock_period_ns": 2.0,
+  "execution_cycles": 1218,
+  "frame_latency_us": 2.436,
+  "metrics": {
+    "cells": {
+      "label": "Total Standard Cells",
+      "value": 63405,
+      "unit": "",
+      "step": "write.views"
+    },
+    "registers": {
+      "label": "Sequential Flip-Flops",
+      "value": 1465,
+      "unit": "cells",
+      "step": "write.views"
+    },
+    "buffers": {
+      "label": "Buffer Cells",
+      "value": 233,
+      "unit": "cells",
+      "step": "write.views"
+    },
+    "inverters": {
+      "label": "Inverter Cells",
+      "value": 5212,
+      "unit": "cells",
+      "step": "write.views"
+    },
+    "cellarea": {
+      "label": "Total Cell Area",
+      "value": 8214.93,
+      "unit": "um^2",
+      "step": "write.views"
+    },
+    "corearea": {
+      "label": "Core Area",
+      "value": 18761.0,
+      "unit": "um^2",
+      "step": "write.views"
+    },
+    "diearea": {
+      "label": "Die Area (139.09 \u00b5m x 139.09 \u00b5m)",
+      "value": 19346.3,
+      "unit": "um^2",
+      "step": "write.views"
+    },
+    "density": {
+      "label": "Core Cell Utilization",
+      "value": 43.79,
+      "unit": "%",
+      "step": "write.views"
+    },
+    "nets": {
+      "label": "Total Nets Routed Cleanly",
+      "value": 61348,
+      "unit": "nets",
+      "step": "route.detailed"
+    },
+    "floating_nets": {
+      "label": "Floating Nets",
+      "value": 0,
+      "unit": "",
+      "step": "route.detailed"
+    },
+    "floating_pins": {
+      "label": "Floating Pins",
+      "value": 0,
+      "unit": "",
+      "step": "route.detailed"
+    },
+    "wirelength": {
+      "label": "Total Routed Wirelength",
+      "value": 178513.0,
+      "unit": "um",
+      "step": "route.detailed"
+    },
+    "vias": {
+      "label": "Total Via Count",
+      "value": 499870,
+      "unit": "vias",
+      "step": "route.detailed"
+    },
+    "totalpower": {
+      "label": "Total Active Power",
+      "value": 32.4734,
+      "unit": "mW",
+      "step": "write.views"
+    },
+    "dynamicpower": {
+      "label": "Dynamic Power (Internal + Switching)",
+      "value": 32.4733,
+      "unit": "mW",
+      "step": "write.views"
+    },
+    "leakagepower": {
+      "label": "Leakage Power",
+      "value": 0.000139,
+      "unit": "mW",
+      "step": "write.views"
+    },
+    "setupwns": {
+      "label": "Worst Negative Slack (Setup)",
+      "value": -2.472,
+      "unit": "ns",
+      "step": "write.views"
+    },
+    "setuptns": {
+      "label": "Total Negative Slack (Setup)",
+      "value": -1250.53,
+      "unit": "ns",
+      "step": "write.views"
+    },
+    "holdwns": {
+      "label": "Worst Negative Slack (Hold)",
+      "value": -0.115,
+      "unit": "ns",
+      "step": "write.views"
+    },
+    "holdtns": {
+      "label": "Total Negative Slack (Hold)",
+      "value": -28.237,
+      "unit": "ns",
+      "step": "write.views"
+    },
+    "fmax": {
+      "label": "Maximum Operating Frequency (Fmax)",
+      "value": 404.19,
+      "unit": "MHz",
+      "step": "write.views"
+    }
+  }
+}

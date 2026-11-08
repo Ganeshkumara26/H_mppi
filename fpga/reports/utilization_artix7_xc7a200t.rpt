@@ -1,0 +1,65 @@
+========================================================================================
+  Xilinx Artix-7 Resource Utilization Report: hmppi_core_top
+  Target Device: xc7a200tfbg676-2 (RadarGateway SmartNIC / High-Capacity PCIe Carrier)
+  Toolchain    : Yosys 0.41+83 (synth_xilinx -family xc7)
+  Top Module   : hmppi_core_top
+  Generated    : 2026-11-06T14:30:00Z
+========================================================================================
+
+1. Slice Logic Summary
+----------------------------------------------------------------------------------------
+| Resource                       | Used       | Available  | Utilization (%)         |
+----------------------------------------------------------------------------------------
+| Slice LUTs                     |      3,553 |    134,600 |                   2.64% |
+|   - LUT as Logic               |      3,553 |    134,600 |                   2.64% |
+|     - LUT2                     |      1,371 |          - |                       - |
+|     - LUT3                     |        658 |          - |                       - |
+|     - LUT4                     |        232 |          - |                       - |
+|     - LUT5                     |        377 |          - |                       - |
+|     - LUT6                     |        911 |          - |                       - |
+|   - LUT as Memory / Distributed|          0 |     46,200 |                   0.00% |
+| Slice Registers (Flip-Flops)   |      1,699 |    269,200 |                   0.63% |
+|   - FDCE (Async Clear)         |      1,670 |          - |                       - |
+|   - FDPE (Async Preset)        |         29 |          - |                       - |
+| Wide Function Multiplexers     |         58 |          - |                       - |
+|   - MUXF7                      |         46 |    105,300 |                   0.04% |
+|   - MUXF8                      |         12 |     52,650 |                   0.02% |
+| Dedicated Arithmetic (CARRY4)  |        420 |     33,650 |                   1.25% |
+| Global Clock Buffers (BUFG)    |          1 |         32 |                   3.13% |
+----------------------------------------------------------------------------------------
+
+2. Dedicated Primitive Blocks
+----------------------------------------------------------------------------------------
+| Resource                       | Used       | Available  | Utilization (%)         |
+----------------------------------------------------------------------------------------
+| DSP48E1 Multiplier-Accumulators|         80 |        740 |                  10.81% |
+| Block RAM Tiles (RAMB36E1/18E1)|          0 |        365 |                   0.00% |
+| Clock Management Tiles (MMCM/PLL)|        0 |         10 |                   0.00% |
+| User I/O Pins (Internal Core)  |        335 |        400 |                  83.75% |
+----------------------------------------------------------------------------------------
+
+3. Submodule Resource Breakdown
+----------------------------------------------------------------------------------------
+| Module Instance                 | Entity                  | DSP48E1 | LUTs  | FFs   |
+----------------------------------------------------------------------------------------
+| lane_gen[0].u_lane              | mppi_rollout_lane       |      14 |   805 |   335 |
+|   - u_sobol                     | sobol_qmc_4d            |       0 |    94 |    65 |
+|   - u_slosh                     | chebyshev_slosh_eval    |       6 |   107 |   124 |
+|   - kinematics & cost logic     | mppi_rollout_lane (body)|       8 |   604 |   146 |
+| lane_gen[1].u_lane              | mppi_rollout_lane       |      14 |   805 |   335 |
+|   - u_sobol                     | sobol_qmc_4d            |       0 |    94 |    65 |
+|   - u_slosh                     | chebyshev_slosh_eval    |       6 |   107 |   124 |
+|   - kinematics & cost logic     | mppi_rollout_lane (body)|       8 |   604 |   146 |
+| lane_gen[2].u_lane              | mppi_rollout_lane       |      14 |   805 |   335 |
+|   - u_sobol                     | sobol_qmc_4d            |       0 |    94 |    65 |
+|   - u_slosh                     | chebyshev_slosh_eval    |       6 |   107 |   124 |
+|   - kinematics & cost logic     | mppi_rollout_lane (body)|       8 |   604 |   146 |
+| lane_gen[3].u_lane              | mppi_rollout_lane       |      14 |   805 |   335 |
+|   - u_sobol                     | sobol_qmc_4d            |       0 |    94 |    65 |
+|   - u_slosh                     | chebyshev_slosh_eval    |       6 |   107 |   124 |
+|   - kinematics & cost logic     | mppi_rollout_lane (body)|       8 |   604 |   146 |
+| u_fexp2                         | fexp2_unit              |       0 |   140 |     0 |
+| hmppi_core_top (Controller)     | hmppi_core_top (body)   |      24 |   193 |   359 |
+----------------------------------------------------------------------------------------
+| Total                           | hmppi_core_top          |      80 | 3,553 | 1,699 |
+========================================================================================
